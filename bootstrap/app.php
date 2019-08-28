@@ -26,6 +26,10 @@ $app = new Illuminate\Foundation\Application(
 |
 */
 
+if(isset( $_SERVER['HTTP_HOST'])) {
+    require realpath(__DIR__ . '/subdomain.php');
+}
+
 $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class
